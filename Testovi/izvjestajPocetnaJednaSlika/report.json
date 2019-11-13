@@ -1,0 +1,17 @@
+{
+  "tests" : [ {
+    "name" : "pocetna_jedna_slika.gspec",
+    "startedAt" : 1573656933678,
+    "endedAt" : 1573656955235,
+    "failed" : false,
+    "statistic" : {
+      "passed" : 72,
+      "errors" : 0,
+      "warnings" : 0,
+      "total" : 72
+    },
+    "testId" : "1-pocetna-jedna-slika.gspec",
+    "duration" : 21557,
+    "failed" : false
+  } ]
+}

@@ -1,0 +1,107 @@
+@objects 
+    logo .logo
+	logo_slika .logo img
+    body body
+    meni .meni
+    lista_menija .meni ul
+    stavka_menija-* .meni li a
+    sadrzaj .sadrzaj
+    tabela .tabelaSala
+    redni .headerRedni
+    sprat .headerSprat
+    sale .sala
+    zauzeta .zauzetaSala
+    slobodna .slobodnaSala
+    kancelarija .kancelarija
+    naslov_spratova td.headerSprat
+    svi_spratovi-* .headerSprat
+    sve_sale-* .sala
+    sve_slobodne-* .slobodnaSala
+    sve_zauzete-* .zauzetaSala
+    sve_kancelarije-* .kancelarija
+
+= Meni section =
+	logo_slika:
+        height ~ 100px
+        inside logo
+        css border-color is "rgb(0, 0, 139)"
+
+    logo:
+        width 100px
+        centered horizontally inside body
+
+    body:
+        width ~90% of screen/width
+        css font-family starts "sans-serif"
+
+    meni:
+        contains partly logo
+        css padding-top is "60px"
+        css background-color is "rgba(92, 153, 202, 1)"
+
+    lista_menija:
+        css padding-top is "0px"
+        css text-align is "center"
+        css padding-bottom is "10px"
+
+    stavka_menija-*:
+        below logo
+        above sadrzaj
+        css display is "inline"
+        
+
+    stavka_menija-3:
+        text is "Unos"
+
+    stavka_menija-1:
+        text is "Početna"
+        left-of stavka_menija-2
+
+    stavka_menija-2:
+        text is "Sale"
+        aligned horizontally top stavka_menija-4
+
+    stavka_menija-4:
+        text is "Rezervacije"
+        right-of stavka_menija-1
+
+= Main section =
+
+    global:
+        count any sve_sale-* is 45
+        count any sve_slobodne-* is 2
+        count any sve_zauzete-* is 2
+        count any sve_kancelarije-* is 2
+
+    sadrzaj:
+        contains tabela
+
+    tabela:
+        width 400px
+
+    sprat:
+        css background-color is "rgba(128, 128, 128, 1)"
+        height 60px
+        above sale
+        inside tabela
+
+    redni:
+        css background-color is "rgba(145, 152, 160, 1)"
+        left-of sale
+        inside tabela
+
+    sale:
+        css background-color is "rgba(255, 255, 255, 1)"
+        inside tabela
+
+    zauzeta:
+        css background-color is "rgba(255, 69, 0, 1)"
+
+    slobodna:
+        css background-color is "rgba(87, 218, 87, 1)"
+
+    kancelarija:
+        css background-color is "rgba(100, 133, 167, 1)"
+
+    naslov_spratova:
+        text is "Spratovi"

@@ -1,0 +1,42 @@
+.sadrzaj{
+    padding: 5%;
+    text-align: center;
+}
+
+
+form{
+    display: table;
+    margin: 0 auto;
+}
+
+
+input, label {
+    display: table-cell;
+    margin: 5px;
+    float: left;
+}
+
+.sadrzaj div{
+    display: table-row;
+}
+
+label{
+    width: 150px;
+    text-align: left;
+}
+
+input[type=submit]{
+    margin: 20px;
+}
+
+@media screen and (max-width: 600px) {
+    label, input{
+        width: 100%;
+    }
+
+    /*za dugme Submit*/
+    div+input{
+        width: 20%;
+    }
+    
+}

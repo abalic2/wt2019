@@ -1,0 +1,40 @@
+.sadrzaj{
+    padding: 5%;
+    display: grid;
+    column-gap: 10px;
+    row-gap: 10px;
+    grid-template-columns: 250px 250px 250px;
+    justify-content: space-evenly;
+
+}
+
+.sadrzaj img{
+    width: 250px;
+    height: 250px;
+}
+
+/*prikaz dvije slike jedna do druge*/
+@media screen and (max-width: 900px) {
+    .sadrzaj{
+        grid-template-columns: 250px 250px;
+    }
+}
+
+/*prikaz jedne slike u redu*/
+@media screen and (max-width: 750px) {
+    .sadrzaj{
+        grid-template-columns: 250px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .sadrzaj{
+        grid-template-columns: 200px;
+    }
+
+    /*80% velicina slike 250px*0.8=200px*/
+    .sadrzaj img{
+        width: 200px;
+        height: 200px;
+    }
+}

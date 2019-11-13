@@ -1,0 +1,1245 @@
+{
+  "testId" : "1-pocetna-dvije-slike.gspec",
+  "name" : "pocetna_dvije_slike.gspec",
+  "report" : {
+    "nodes" : [ {
+      "name" : "Mutation test",
+      "status" : "info",
+      "nodes" : [ {
+        "name" : "check  pocetna_dvije_slike.gspec --url http://localhost/pocetna.html --size 800x768 --htmlreport izvjestajPocetnaDvijeSlike",
+        "status" : "info",
+        "nodes" : [ {
+          "name" : "Check layout: pocetna_dvije_slike.gspec included tags: ",
+          "status" : "info",
+          "time" : 1573656845883,
+          "sections" : [ {
+            "name" : "Meni section",
+            "place" : {
+              "filePath" : "pocetna_dvije_slike.gspec",
+              "lineNumber" : 11
+            },
+            "objects" : [ {
+              "name" : "logo_slika",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 13
+                },
+                "name" : "height ~ 100px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "logo_slika",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "logo_slika",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : "98 to 102px",
+                  "realDistance" : "102px"
+                } ],
+                "highlight" : [ "logo_slika" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 14
+                },
+                "name" : "inside logo",
+                "meta" : [ ],
+                "highlight" : [ "logo_slika", "logo" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 15
+                },
+                "name" : "css border-color is \"rgb(0, 0, 139)\"",
+                "highlight" : [ "logo_slika" ]
+              } ]
+            }, {
+              "name" : "logo",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 18
+                },
+                "name" : "width 100px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "logo",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "logo",
+                    "edge" : "right"
+                  },
+                  "expectedDistance" : "100px",
+                  "realDistance" : "100px"
+                } ],
+                "highlight" : [ "logo" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 19
+                },
+                "name" : "centered horizontally inside body",
+                "highlight" : [ "logo", "body" ]
+              } ]
+            }, {
+              "name" : "body",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 22
+                },
+                "name" : "width ~90% of screen/width",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "body",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "body",
+                    "edge" : "right"
+                  },
+                  "expectedDistance" : "88 to 92% [677 to 708px]",
+                  "realDistance" : "90% [694px]"
+                } ],
+                "highlight" : [ "body" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 23
+                },
+                "name" : "css font-family starts \"sans-serif\"",
+                "highlight" : [ "body" ]
+              } ]
+            }, {
+              "name" : "meni",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 26
+                },
+                "name" : "contains partly logo",
+                "highlight" : [ "meni", "logo" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 27
+                },
+                "name" : "css padding-top is \"60px\"",
+                "highlight" : [ "meni" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 28
+                },
+                "name" : "css background-color is \"rgba(92, 153, 202, 1)\"",
+                "highlight" : [ "meni" ]
+              } ]
+            }, {
+              "name" : "lista_menija",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 31
+                },
+                "name" : "css padding-top is \"0px\"",
+                "highlight" : [ "lista_menija" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 32
+                },
+                "name" : "css text-align is \"center\"",
+                "highlight" : [ "lista_menija" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 33
+                },
+                "name" : "css padding-bottom is \"10px\"",
+                "highlight" : [ "lista_menija" ]
+              } ]
+            }, {
+              "name" : "stavka_menija-1",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 36
+                },
+                "name" : "below logo",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "stavka_menija-1",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "logo",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "23px"
+                } ],
+                "highlight" : [ "stavka_menija-1", "logo" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 37
+                },
+                "name" : "above sadrzaj",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "stavka_menija-1",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "sadrzaj",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "17px"
+                } ],
+                "highlight" : [ "stavka_menija-1", "sadrzaj" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 38
+                },
+                "name" : "css display is \"inline\"",
+                "highlight" : [ "stavka_menija-1" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 45
+                },
+                "name" : "text is \"PoÄ?etna\"",
+                "highlight" : [ "stavka_menija-1" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 46
+                },
+                "name" : "left-of stavka_menija-2",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "stavka_menija-1",
+                    "edge" : "right"
+                  },
+                  "to" : {
+                    "object" : "stavka_menija-2",
+                    "edge" : "left"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "39px"
+                } ],
+                "highlight" : [ "stavka_menija-1", "stavka_menija-2" ]
+              } ]
+            }, {
+              "name" : "stavka_menija-2",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 36
+                },
+                "name" : "below logo",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "stavka_menija-2",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "logo",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "23px"
+                } ],
+                "highlight" : [ "stavka_menija-2", "logo" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 37
+                },
+                "name" : "above sadrzaj",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "stavka_menija-2",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "sadrzaj",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "17px"
+                } ],
+                "highlight" : [ "stavka_menija-2", "sadrzaj" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 38
+                },
+                "name" : "css display is \"inline\"",
+                "highlight" : [ "stavka_menija-2" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 49
+                },
+                "name" : "text is \"Sale\"",
+                "highlight" : [ "stavka_menija-2" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 50
+                },
+                "name" : "aligned horizontally top stavka_menija-4",
+                "highlight" : [ "stavka_menija-2", "stavka_menija-4" ]
+              } ]
+            }, {
+              "name" : "stavka_menija-3",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 36
+                },
+                "name" : "below logo",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "stavka_menija-3",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "logo",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "23px"
+                } ],
+                "highlight" : [ "stavka_menija-3", "logo" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 37
+                },
+                "name" : "above sadrzaj",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "stavka_menija-3",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "sadrzaj",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "17px"
+                } ],
+                "highlight" : [ "stavka_menija-3", "sadrzaj" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 38
+                },
+                "name" : "css display is \"inline\"",
+                "highlight" : [ "stavka_menija-3" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 42
+                },
+                "name" : "text is \"Unos\"",
+                "highlight" : [ "stavka_menija-3" ]
+              } ]
+            }, {
+              "name" : "stavka_menija-4",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 36
+                },
+                "name" : "below logo",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "stavka_menija-4",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "logo",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "23px"
+                } ],
+                "highlight" : [ "stavka_menija-4", "logo" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 37
+                },
+                "name" : "above sadrzaj",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "stavka_menija-4",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "sadrzaj",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "17px"
+                } ],
+                "highlight" : [ "stavka_menija-4", "sadrzaj" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 38
+                },
+                "name" : "css display is \"inline\"",
+                "highlight" : [ "stavka_menija-4" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 53
+                },
+                "name" : "text is \"Rezervacije\"",
+                "highlight" : [ "stavka_menija-4" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 54
+                },
+                "name" : "right-of stavka_menija-1",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "stavka_menija-4",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "stavka_menija-1",
+                    "edge" : "right"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "186px"
+                } ],
+                "highlight" : [ "stavka_menija-4", "stavka_menija-1" ]
+              } ]
+            } ]
+          }, {
+            "name" : "Main section",
+            "place" : {
+              "filePath" : "pocetna_dvije_slike.gspec",
+              "lineNumber" : 56
+            },
+            "objects" : [ {
+              "name" : "global",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 59
+                },
+                "name" : "count any slike-* is 10",
+                "highlight" : [ "slike-4", "slike-3", "slike-6", "slike-5", "slike-8", "slike-7", "slike-10", "slike-9", "slike-2", "slike-1" ]
+              } ]
+            }, {
+              "name" : "slike-1",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 62
+                },
+                "name" : "width 250px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "slike-1",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "slike-1",
+                    "edge" : "right"
+                  },
+                  "expectedDistance" : "250px",
+                  "realDistance" : "250px"
+                } ],
+                "highlight" : [ "slike-1" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 63
+                },
+                "name" : "height 250px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "slike-1",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "slike-1",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : "250px",
+                  "realDistance" : "250px"
+                } ],
+                "highlight" : [ "slike-1" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 66
+                },
+                "name" : "aligned horizontally all slike-2",
+                "highlight" : [ "slike-1", "slike-2" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 67
+                },
+                "name" : "aligned vertically all slike-3",
+                "highlight" : [ "slike-1", "slike-3" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 68
+                },
+                "name" : "aligned vertically all slike-5",
+                "highlight" : [ "slike-1", "slike-5" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 69
+                },
+                "name" : "aligned vertically all slike-7",
+                "highlight" : [ "slike-1", "slike-7" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 70
+                },
+                "name" : "aligned vertically all slike-9",
+                "highlight" : [ "slike-1", "slike-9" ]
+              } ]
+            }, {
+              "name" : "slike-2",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 62
+                },
+                "name" : "width 250px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "slike-2",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "slike-2",
+                    "edge" : "right"
+                  },
+                  "expectedDistance" : "250px",
+                  "realDistance" : "250px"
+                } ],
+                "highlight" : [ "slike-2" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 63
+                },
+                "name" : "height 250px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "slike-2",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "slike-2",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : "250px",
+                  "realDistance" : "250px"
+                } ],
+                "highlight" : [ "slike-2" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 74
+                },
+                "name" : "aligned vertically all slike-4",
+                "highlight" : [ "slike-2", "slike-4" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 75
+                },
+                "name" : "aligned vertically all slike-6",
+                "highlight" : [ "slike-2", "slike-6" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 76
+                },
+                "name" : "aligned vertically all slike-8",
+                "highlight" : [ "slike-2", "slike-8" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 77
+                },
+                "name" : "aligned vertically all slike-10",
+                "highlight" : [ "slike-2", "slike-10" ]
+              } ]
+            }, {
+              "name" : "slike-3",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 62
+                },
+                "name" : "width 250px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "slike-3",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "slike-3",
+                    "edge" : "right"
+                  },
+                  "expectedDistance" : "250px",
+                  "realDistance" : "250px"
+                } ],
+                "highlight" : [ "slike-3" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 63
+                },
+                "name" : "height 250px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "slike-3",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "slike-3",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : "250px",
+                  "realDistance" : "250px"
+                } ],
+                "highlight" : [ "slike-3" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 81
+                },
+                "name" : "aligned horizontally all slike-4",
+                "highlight" : [ "slike-3", "slike-4" ]
+              } ]
+            }, {
+              "name" : "slike-4",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 62
+                },
+                "name" : "width 250px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "slike-4",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "slike-4",
+                    "edge" : "right"
+                  },
+                  "expectedDistance" : "250px",
+                  "realDistance" : "250px"
+                } ],
+                "highlight" : [ "slike-4" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 63
+                },
+                "name" : "height 250px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "slike-4",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "slike-4",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : "250px",
+                  "realDistance" : "250px"
+                } ],
+                "highlight" : [ "slike-4" ]
+              } ]
+            }, {
+              "name" : "slike-5",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 62
+                },
+                "name" : "width 250px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "slike-5",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "slike-5",
+                    "edge" : "right"
+                  },
+                  "expectedDistance" : "250px",
+                  "realDistance" : "250px"
+                } ],
+                "highlight" : [ "slike-5" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 63
+                },
+                "name" : "height 250px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "slike-5",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "slike-5",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : "250px",
+                  "realDistance" : "250px"
+                } ],
+                "highlight" : [ "slike-5" ]
+              } ]
+            }, {
+              "name" : "slike-6",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 62
+                },
+                "name" : "width 250px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "slike-6",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "slike-6",
+                    "edge" : "right"
+                  },
+                  "expectedDistance" : "250px",
+                  "realDistance" : "250px"
+                } ],
+                "highlight" : [ "slike-6" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 63
+                },
+                "name" : "height 250px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "slike-6",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "slike-6",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : "250px",
+                  "realDistance" : "250px"
+                } ],
+                "highlight" : [ "slike-6" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 84
+                },
+                "name" : "below slike-4 10px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "slike-6",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "slike-4",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : "10px",
+                  "realDistance" : "10px"
+                } ],
+                "highlight" : [ "slike-6", "slike-4" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 85
+                },
+                "name" : "aligned horizontally all slike-5",
+                "highlight" : [ "slike-6", "slike-5" ]
+              } ]
+            }, {
+              "name" : "slike-7",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 62
+                },
+                "name" : "width 250px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "slike-7",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "slike-7",
+                    "edge" : "right"
+                  },
+                  "expectedDistance" : "250px",
+                  "realDistance" : "250px"
+                } ],
+                "highlight" : [ "slike-7" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 63
+                },
+                "name" : "height 250px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "slike-7",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "slike-7",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : "250px",
+                  "realDistance" : "250px"
+                } ],
+                "highlight" : [ "slike-7" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 88
+                },
+                "name" : "aligned horizontally all slike-8",
+                "highlight" : [ "slike-7", "slike-8" ]
+              } ]
+            }, {
+              "name" : "slike-8",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 62
+                },
+                "name" : "width 250px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "slike-8",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "slike-8",
+                    "edge" : "right"
+                  },
+                  "expectedDistance" : "250px",
+                  "realDistance" : "250px"
+                } ],
+                "highlight" : [ "slike-8" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 63
+                },
+                "name" : "height 250px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "slike-8",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "slike-8",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : "250px",
+                  "realDistance" : "250px"
+                } ],
+                "highlight" : [ "slike-8" ]
+              } ]
+            }, {
+              "name" : "slike-9",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 62
+                },
+                "name" : "width 250px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "slike-9",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "slike-9",
+                    "edge" : "right"
+                  },
+                  "expectedDistance" : "250px",
+                  "realDistance" : "250px"
+                } ],
+                "highlight" : [ "slike-9" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 63
+                },
+                "name" : "height 250px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "slike-9",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "slike-9",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : "250px",
+                  "realDistance" : "250px"
+                } ],
+                "highlight" : [ "slike-9" ]
+              } ]
+            }, {
+              "name" : "slike-10",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 62
+                },
+                "name" : "width 250px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "slike-10",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "slike-10",
+                    "edge" : "right"
+                  },
+                  "expectedDistance" : "250px",
+                  "realDistance" : "250px"
+                } ],
+                "highlight" : [ "slike-10" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 63
+                },
+                "name" : "height 250px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "slike-10",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "slike-10",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : "250px",
+                  "realDistance" : "250px"
+                } ],
+                "highlight" : [ "slike-10" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 91
+                },
+                "name" : "below slike-7 10px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "slike-10",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "slike-7",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : "10px",
+                  "realDistance" : "10px"
+                } ],
+                "highlight" : [ "slike-10", "slike-7" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "pocetna_dvije_slike.gspec",
+                  "lineNumber" : 92
+                },
+                "name" : "aligned horizontally all slike-9",
+                "highlight" : [ "slike-10", "slike-9" ]
+              } ]
+            } ]
+          } ],
+          "objects" : {
+            "meni" : {
+              "area" : [ 38, 106, 694, 104 ]
+            },
+            "slike-4" : {
+              "area" : [ 409, 511, 250, 250 ]
+            },
+            "slike-3" : {
+              "area" : [ 111, 511, 250, 250 ]
+            },
+            "lista_menija" : {
+              "area" : [ 38, 182, 694, 29 ]
+            },
+            "slike-6" : {
+              "area" : [ 409, 771, 250, 250 ]
+            },
+            "slike-5" : {
+              "area" : [ 111, 771, 250, 250 ]
+            },
+            "slike-8" : {
+              "area" : [ 409, 1031, 250, 250 ]
+            },
+            "slike-7" : {
+              "area" : [ 111, 1031, 250, 250 ]
+            },
+            "slike-10" : {
+              "area" : [ 409, 1291, 250, 250 ]
+            },
+            "slike-9" : {
+              "area" : [ 111, 1291, 250, 250 ]
+            },
+            "stavka_menija-3" : {
+              "area" : [ 329, 182, 38, 18 ]
+            },
+            "stavka_menija-2" : {
+              "area" : [ 258, 182, 32, 18 ]
+            },
+            "logo_slika" : {
+              "area" : [ 335, 53, 102, 102 ]
+            },
+            "stavka_menija-1" : {
+              "area" : [ 160, 182, 59, 18 ]
+            },
+            "body" : {
+              "area" : [ 38, 0, 694, 1577 ]
+            },
+            "sadrzaj" : {
+              "area" : [ 38, 217, 694, 1359 ]
+            },
+            "stavka_menija-4" : {
+              "area" : [ 405, 182, 84, 18 ]
+            },
+            "logo" : {
+              "area" : [ 335, 53, 100, 106 ]
+            },
+            "slike-2" : {
+              "area" : [ 409, 251, 250, 250 ]
+            },
+            "slike-1" : {
+              "area" : [ 111, 251, 250, 250 ]
+            }
+          },
+          "screenshot" : "layout-1-screenshot.png",
+          "type" : "layout"
+        }, {
+          "name" : "Mutation testing: pocetna_dvije_slike.gspec included tags: ",
+          "status" : "info",
+          "time" : 1573656845883,
+          "mutationReport" : {
+            "objectMutationStatistics" : {
+              "meni" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "slike-4" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "slike-3" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "lista_menija" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "slike-6" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "slike-5" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "slike-8" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "slike-7" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "slike-10" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "slike-9" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "stavka_menija-3" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "screen" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "stavka_menija-2" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "logo_slika" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "stavka_menija-1" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "body" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "sadrzaj" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "stavka_menija-4" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "logo" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "slike-2" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "slike-1" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              }
+            },
+            "totalPassed" : 210,
+            "totalFailed" : 0,
+            "totalMutations" : 210,
+            "failedRatio" : 0.0
+          },
+          "type" : "mutation"
+        } ],
+        "time" : 1573656833380,
+        "type" : "node"
+      } ],
+      "time" : 1573656822939,
+      "type" : "node"
+    } ]
+  }
+}

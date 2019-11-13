@@ -1,0 +1,166 @@
+
+.sadrzaj{
+    padding: 3%;
+    
+}
+
+.unutra{
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+
+.kalendar{
+    border: 3px solid rgb(51, 51, 158);
+    padding: 10px 0;
+    margin: 10px auto;
+    box-sizing: border-box;
+    width: 100%;
+
+}
+
+.sviDani, .daniUSedmici{
+    margin: 5px;
+    display: grid;
+    padding: 5px;
+    grid-template-columns: repeat(7,minmax(60px, 90px));
+    justify-content: space-evenly;
+    row-gap: 10px;
+    column-gap: 10px;
+}
+
+.sviDani{
+    grid-template-rows: repeat(5,50px);
+}
+
+#mjesec{
+    text-decoration-color: rgb(51, 51, 158);
+    font-weight: bold;
+    padding-left: 15px;
+}
+
+.daniUSedmici label{
+    border: 3px solid rgb(51, 51, 158);
+    text-align: center;
+    font-weight: bold;
+}
+
+.dan {
+    background-color: white;
+    border: 3px solid rgb(51, 51, 158);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+.sviDani div:first-of-type{
+    grid-column-start: 5;
+}
+
+.broj{
+    box-sizing: border-box;
+    padding-top: 3px;
+    height: 60%;
+    text-align: center;
+    font-size: large;
+}
+
+.slobodna, .zauzeta{
+    box-sizing: border-box;
+    border-top: 3px solid rgb(51, 51, 158);
+    height: 40%;
+    width: 100%;
+}
+
+
+.slobodna{
+    background-color: rgb(67, 233, 67);
+}
+
+.zauzeta{
+    background-color: rgb(240, 74, 74);
+}
+
+/*stiliziranje forme iznad kalendara*/
+.forma{
+    display: table;
+    margin: 10px auto;
+}
+
+.forma div{
+    display: table-row;
+}
+
+.forma label, select, input {
+    display: table-cell;
+    padding: 5px;
+}
+
+
+
+
+/*stilitovanje dugmadi*/
+button {
+    transition-duration: 0.4s;
+    background-color: rgb(51, 51, 158);
+    color: white;
+    padding: 12px 28px;
+    border: none;
+  }
+  
+button:hover {
+    background-color: rgb(205, 206, 224); 
+    color: rgb(12, 1, 1);
+}
+
+button + button{
+    float:right;
+}
+ 
+
+
+
+@media screen and (max-width: 600px) {
+    
+    .sviDani, .daniUSedmici{
+        grid-template-rows: repeat(7,50px);
+        grid-template-columns: repeat(1,70px);
+    }
+
+    
+    .daniUSedmici{
+        float:left;
+    }
+
+    .sviDani div:nth-of-type(1){
+        grid-column-start: 1;
+    }
+    
+
+    .dan:nth-of-type(-n+3){
+        display: none;
+     }
+
+    
+    .dan:nth-last-of-type(-n+20){
+        display: none;
+    }
+    
+    .unutra{
+        width: 200px;
+    }
+
+    .daniUSedmici{
+        margin-left: 20px;
+        align-items: center;
+    }
+
+    button{
+        width: 90px;
+        padding: 12px 20px;
+    }
+
+    .forma {
+        width: 200px
+    }
+}

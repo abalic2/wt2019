@@ -1,0 +1,76 @@
+@objects
+    logo .logo
+	logo_slika .logo img
+    body body
+    meni .meni
+    lista_menija .meni ul
+    stavka_menija-* .meni li a
+    sadrzaj .sadrzaj
+    forma form
+    labele  label
+    input_polja  input
+
+    
+
+= Meni section =
+	logo_slika:
+        height ~ 100px
+        inside logo
+        css border-color is "rgb(0, 0, 139)"
+
+    logo:
+        width 100px
+        centered horizontally inside body
+
+    body:
+        width ~90% of screen/width
+        css font-family starts "sans-serif"
+
+    meni:
+        contains partly logo
+        css padding-top is "60px"
+        css background-color is "rgba(92, 153, 202, 1)"
+
+    lista_menija:
+        css padding-top is "0px"
+        css text-align is "center"
+        css padding-bottom is "10px"
+
+    stavka_menija-*:
+        below logo
+        above sadrzaj
+        css display is "inline"
+        
+
+    stavka_menija-3:
+        text is "Unos"
+
+    stavka_menija-1:
+        text is "Početna"
+        above stavka_menija-2
+
+    stavka_menija-2:
+        text is "Sale"
+        above stavka_menija-3
+
+    stavka_menija-4:
+        text is "Rezervacije"
+        below stavka_menija-3
+
+
+= Main section =
+
+    forma:
+        inside sadrzaj
+        below meni
+        below logo
+
+    labele:
+        above input_polja
+        width 100% of forma/width
+        aligned vertically left input_polja
+
+
+    input_polja:
+        width ~100% of forma/width
+

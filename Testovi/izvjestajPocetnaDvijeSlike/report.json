@@ -1,0 +1,17 @@
+{
+  "tests" : [ {
+    "name" : "pocetna_dvije_slike.gspec",
+    "startedAt" : 1573656822937,
+    "endedAt" : 1573656846498,
+    "failed" : false,
+    "statistic" : {
+      "passed" : 69,
+      "errors" : 0,
+      "warnings" : 0,
+      "total" : 69
+    },
+    "testId" : "1-pocetna-dvije-slike.gspec",
+    "duration" : 23561,
+    "failed" : false
+  } ]
+}

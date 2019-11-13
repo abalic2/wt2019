@@ -1,0 +1,742 @@
+{
+  "testId" : "1-mobileunos.gspec",
+  "name" : "mobileUnos.gspec",
+  "report" : {
+    "nodes" : [ {
+      "name" : "Mutation test",
+      "status" : "info",
+      "nodes" : [ {
+        "name" : "check  mobileUnos.gspec --url http://localhost/unos.html --size 400x768 --htmlreport izvjestajMobileUnos",
+        "status" : "info",
+        "nodes" : [ {
+          "name" : "Check layout: mobileUnos.gspec included tags: ",
+          "status" : "info",
+          "time" : 1573656530555,
+          "sections" : [ {
+            "name" : "Meni section",
+            "place" : {
+              "filePath" : "mobileUnos.gspec",
+              "lineNumber" : 15
+            },
+            "objects" : [ {
+              "name" : "logo_slika",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 17
+                },
+                "name" : "height ~ 100px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "logo_slika",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "logo_slika",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : "98 to 102px",
+                  "realDistance" : "102px"
+                } ],
+                "highlight" : [ "logo_slika" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 18
+                },
+                "name" : "inside logo",
+                "meta" : [ ],
+                "highlight" : [ "logo_slika", "logo" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 19
+                },
+                "name" : "css border-color is \"rgb(0, 0, 139)\"",
+                "highlight" : [ "logo_slika" ]
+              } ]
+            }, {
+              "name" : "logo",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 22
+                },
+                "name" : "width 100px",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "logo",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "logo",
+                    "edge" : "right"
+                  },
+                  "expectedDistance" : "100px",
+                  "realDistance" : "100px"
+                } ],
+                "highlight" : [ "logo" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 23
+                },
+                "name" : "centered horizontally inside body",
+                "highlight" : [ "logo", "body" ]
+              } ]
+            }, {
+              "name" : "body",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 26
+                },
+                "name" : "width ~90% of screen/width",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "body",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "body",
+                    "edge" : "right"
+                  },
+                  "expectedDistance" : "88 to 92% [440 to 460px]",
+                  "realDistance" : "90% [450px]"
+                } ],
+                "highlight" : [ "body" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 27
+                },
+                "name" : "css font-family starts \"sans-serif\"",
+                "highlight" : [ "body" ]
+              } ]
+            }, {
+              "name" : "meni",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 30
+                },
+                "name" : "contains partly logo",
+                "highlight" : [ "meni", "logo" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 31
+                },
+                "name" : "css padding-top is \"60px\"",
+                "highlight" : [ "meni" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 32
+                },
+                "name" : "css background-color is \"rgba(92, 153, 202, 1)\"",
+                "highlight" : [ "meni" ]
+              } ]
+            }, {
+              "name" : "lista_menija",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 35
+                },
+                "name" : "css padding-top is \"0px\"",
+                "highlight" : [ "lista_menija" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 36
+                },
+                "name" : "css text-align is \"center\"",
+                "highlight" : [ "lista_menija" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 37
+                },
+                "name" : "css padding-bottom is \"10px\"",
+                "highlight" : [ "lista_menija" ]
+              } ]
+            }, {
+              "name" : "stavka_menija-1",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 40
+                },
+                "name" : "below logo",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "stavka_menija-1",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "logo",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "23px"
+                } ],
+                "highlight" : [ "stavka_menija-1", "logo" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 41
+                },
+                "name" : "above sadrzaj",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "stavka_menija-1",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "sadrzaj",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "88px"
+                } ],
+                "highlight" : [ "stavka_menija-1", "sadrzaj" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 42
+                },
+                "name" : "css display is \"inline\"",
+                "highlight" : [ "stavka_menija-1" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 49
+                },
+                "name" : "text is \"PoÄ?etna\"",
+                "highlight" : [ "stavka_menija-1" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 50
+                },
+                "name" : "above stavka_menija-2",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "stavka_menija-1",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "stavka_menija-2",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "0px"
+                } ],
+                "highlight" : [ "stavka_menija-1", "stavka_menija-2" ]
+              } ]
+            }, {
+              "name" : "stavka_menija-2",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 40
+                },
+                "name" : "below logo",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "stavka_menija-2",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "logo",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "41px"
+                } ],
+                "highlight" : [ "stavka_menija-2", "logo" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 41
+                },
+                "name" : "above sadrzaj",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "stavka_menija-2",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "sadrzaj",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "70px"
+                } ],
+                "highlight" : [ "stavka_menija-2", "sadrzaj" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 42
+                },
+                "name" : "css display is \"inline\"",
+                "highlight" : [ "stavka_menija-2" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 53
+                },
+                "name" : "text is \"Sale\"",
+                "highlight" : [ "stavka_menija-2" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 54
+                },
+                "name" : "above stavka_menija-3",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "stavka_menija-2",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "stavka_menija-3",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "0px"
+                } ],
+                "highlight" : [ "stavka_menija-2", "stavka_menija-3" ]
+              } ]
+            }, {
+              "name" : "stavka_menija-3",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 40
+                },
+                "name" : "below logo",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "stavka_menija-3",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "logo",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "59px"
+                } ],
+                "highlight" : [ "stavka_menija-3", "logo" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 41
+                },
+                "name" : "above sadrzaj",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "stavka_menija-3",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "sadrzaj",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "52px"
+                } ],
+                "highlight" : [ "stavka_menija-3", "sadrzaj" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 42
+                },
+                "name" : "css display is \"inline\"",
+                "highlight" : [ "stavka_menija-3" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 46
+                },
+                "name" : "text is \"Unos\"",
+                "highlight" : [ "stavka_menija-3" ]
+              } ]
+            }, {
+              "name" : "stavka_menija-4",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 40
+                },
+                "name" : "below logo",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "stavka_menija-4",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "logo",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "78px"
+                } ],
+                "highlight" : [ "stavka_menija-4", "logo" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 41
+                },
+                "name" : "above sadrzaj",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "stavka_menija-4",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "sadrzaj",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "33px"
+                } ],
+                "highlight" : [ "stavka_menija-4", "sadrzaj" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 42
+                },
+                "name" : "css display is \"inline\"",
+                "highlight" : [ "stavka_menija-4" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 57
+                },
+                "name" : "text is \"Rezervacije\"",
+                "highlight" : [ "stavka_menija-4" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 58
+                },
+                "name" : "below stavka_menija-3",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "stavka_menija-4",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "stavka_menija-3",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "1px"
+                } ],
+                "highlight" : [ "stavka_menija-4", "stavka_menija-3" ]
+              } ]
+            } ]
+          }, {
+            "name" : "Main section",
+            "place" : {
+              "filePath" : "mobileUnos.gspec",
+              "lineNumber" : 61
+            },
+            "objects" : [ {
+              "name" : "forma",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 64
+                },
+                "name" : "inside sadrzaj",
+                "meta" : [ ],
+                "highlight" : [ "forma", "sadrzaj" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 65
+                },
+                "name" : "below meni",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "forma",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "meni",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "27px"
+                } ],
+                "highlight" : [ "forma", "meni" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 66
+                },
+                "name" : "below logo",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "forma",
+                    "edge" : "top"
+                  },
+                  "to" : {
+                    "object" : "logo",
+                    "edge" : "bottom"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "152px"
+                } ],
+                "highlight" : [ "forma", "logo" ]
+              } ]
+            }, {
+              "name" : "labele",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 69
+                },
+                "name" : "above input_polja",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "labele",
+                    "edge" : "bottom"
+                  },
+                  "to" : {
+                    "object" : "input_polja",
+                    "edge" : "top"
+                  },
+                  "expectedDistance" : ">= 0px",
+                  "realDistance" : "10px"
+                } ],
+                "highlight" : [ "labele", "input_polja" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 70
+                },
+                "name" : "width 100% of forma/width",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "labele",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "labele",
+                    "edge" : "right"
+                  },
+                  "expectedDistance" : "100% [313px]",
+                  "realDistance" : "100% [313px]"
+                } ],
+                "highlight" : [ "labele" ]
+              }, {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 71
+                },
+                "name" : "aligned vertically left input_polja",
+                "highlight" : [ "labele", "input_polja" ]
+              } ]
+            }, {
+              "name" : "input_polja",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "mobileUnos.gspec",
+                  "lineNumber" : 75
+                },
+                "name" : "width ~100% of forma/width",
+                "meta" : [ {
+                  "from" : {
+                    "object" : "input_polja",
+                    "edge" : "left"
+                  },
+                  "to" : {
+                    "object" : "input_polja",
+                    "edge" : "right"
+                  },
+                  "expectedDistance" : "98 to 102% [306 to 319px]",
+                  "realDistance" : "101% [317px]"
+                } ],
+                "highlight" : [ "input_polja" ]
+              } ]
+            } ]
+          } ],
+          "objects" : {
+            "meni" : {
+              "area" : [ 25, 106, 450, 178 ]
+            },
+            "labele" : {
+              "area" : [ 98, 316, 313, 18 ]
+            },
+            "lista_menija" : {
+              "area" : [ 25, 182, 450, 102 ]
+            },
+            "stavka_menija-3" : {
+              "area" : [ 220, 218, 38, 18 ]
+            },
+            "stavka_menija-2" : {
+              "area" : [ 222, 200, 32, 18 ]
+            },
+            "logo_slika" : {
+              "area" : [ 200, 53, 102, 102 ]
+            },
+            "stavka_menija-1" : {
+              "area" : [ 209, 182, 58, 18 ]
+            },
+            "body" : {
+              "area" : [ 25, 0, 450, 639 ]
+            },
+            "forma" : {
+              "area" : [ 93, 311, 313, 306 ]
+            },
+            "input_polja" : {
+              "area" : [ 98, 344, 317, 22 ]
+            },
+            "sadrzaj" : {
+              "area" : [ 25, 288, 450, 350 ]
+            },
+            "stavka_menija-4" : {
+              "area" : [ 196, 237, 84, 18 ]
+            },
+            "logo" : {
+              "area" : [ 200, 53, 100, 106 ]
+            }
+          },
+          "screenshot" : "layout-1-screenshot.png",
+          "type" : "layout"
+        }, {
+          "name" : "Mutation testing: mobileUnos.gspec included tags: ",
+          "status" : "info",
+          "time" : 1573656530555,
+          "mutationReport" : {
+            "objectMutationStatistics" : {
+              "meni" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "labele" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "lista_menija" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "stavka_menija-3" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "screen" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "stavka_menija-2" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "logo_slika" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "stavka_menija-1" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "body" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "forma" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "input_polja" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "sadrzaj" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "stavka_menija-4" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              },
+              "logo" : {
+                "passed" : 10,
+                "failed" : 0,
+                "failedMutations" : [ ]
+              }
+            },
+            "totalPassed" : 140,
+            "totalFailed" : 0,
+            "totalMutations" : 140,
+            "failedRatio" : 0.0
+          },
+          "type" : "mutation"
+        } ],
+        "time" : 1573656522705,
+        "type" : "node"
+      } ],
+      "time" : 1573656512360,
+      "type" : "node"
+    } ]
+  }
+}

@@ -1,0 +1,150 @@
+@objects
+    logo .logo
+	logo_slika .logo img
+    body body
+    meni .meni
+    lista_menija .meni ul
+    stavka_menija-* .meni li a
+    forma .forma
+    sadrzaj .sadrzaj
+    labele_forme-* .forma label
+    kalendar .kalendar
+    dugmad-* button
+    zauzeta-* .zauzeta
+    slobodna-* .slobodna
+    dani-* .dan
+    dani_u_sedmici-* .daniUSedmici label
+
+= Meni section =
+	logo_slika:
+        height ~ 100px
+        inside logo
+        css border-color is "rgb(0, 0, 139)"
+
+    logo:
+        width 100px
+        centered horizontally inside body
+
+    body:
+        width ~90% of screen/width
+        css font-family starts "sans-serif"
+
+    meni:
+        contains partly logo
+        css padding-top is "60px"
+        css background-color is "rgba(92, 153, 202, 1)"
+
+    lista_menija:
+        css padding-top is "0px"
+        css text-align is "center"
+        css padding-bottom is "10px"
+
+    stavka_menija-*:
+        below logo
+        above sadrzaj
+        css display is "inline"
+        
+
+    stavka_menija-3:
+        text is "Unos"
+
+    stavka_menija-1:
+        text is "Početna"
+        above stavka_menija-2
+
+    stavka_menija-2:
+        text is "Sale"
+        above stavka_menija-3
+
+    stavka_menija-4:
+        text is "Rezervacije"
+        below stavka_menija-3
+
+= Main section =
+
+    global:
+        count any labele_forme-* is 4 
+        count any dani-* is 30
+        count any dani_u_sedmici-* is 7
+
+    forma:
+        centered horizontally inside screen
+        above kalendar ~ 10px
+        inside sadrzaj < 40px top
+
+    labele_forme-1:
+        aligned vertically all labele_forme-2
+        aligned vertically all labele_forme-3
+        aligned vertically all labele_forme-4
+        width 100% of labele_forme-2/width
+        width 100% of labele_forme-3/width
+        width 100% of labele_forme-4/width
+
+    labele_forme-2:
+        height 158% of labele_forme-1/height
+
+    screen:
+        contains forma
+        contains sadrzaj
+
+    sadrzaj:
+        width 90% of screen/width
+        centered horizontally inside screen
+    
+    kalendar:
+        centered horizontally inside screen
+        height > 450px
+
+    dugmad-1:
+        aligned vertically left kalendar
+        aligned horizontally all dugmad-2
+        text is "Prethodni"
+        below kalendar 10px 
+
+    dugmad-2:
+        aligned vertically right kalendar 1px
+        text is "Sljedeći"
+        below kalendar 10px
+
+    dugmad-*:
+        css background-color is "rgba(51, 51, 158, 1)"
+
+    @for [1 - 3] as indexDana
+        dani-${indexDana}:
+            absent
+
+    @for [1 - 3] as index
+        slobodna-${index}:
+            absent
+
+    @for [10 - 26] as index
+        slobodna-${index}:
+            absent
+
+    @for [2 - 4] as index
+        zauzeta-${index}:
+            absent
+
+    @for [11 - 30] as indexDana
+        dani-${indexDana}:
+            absent
+
+    @for [4 - 9] as indexDana
+        dani-${indexDana}:
+            above dani-${indexDana+1} 10px
+            aligned vertically all dani-${indexDana+1} 
+            right-of dani_u_sedmici-${indexDana-3} 
+
+    @for [1 - 6] as indexDana
+        dani_u_sedmici-${indexDana}:
+            aligned vertically all dani_u_sedmici-${indexDana+1}     
+
+    slobodna-4:
+        above zauzeta-1 ~40px
+        aligned vertically all zauzeta-1
+        css background-color is  "rgba(67, 233, 67, 1)"
+        
+
+    
+
+
