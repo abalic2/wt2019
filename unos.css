@@ -1,119 +1,42 @@
-.meni {
-  position: relative;
-  background-color: #7aa5d2;
-  padding-top: 45px;
-  margin-top: 40px;
-  border: 1px solid #47555e;
+.sadrzaj{
+    padding: 5%;
+    text-align: center;
 }
 
-.logo img {
-  max-width: auto;
-  max-height: 100%;
+
+form{
+    display: table;
+    margin: 0 auto;
 }
 
-.logo {
-  position: absolute;
-  margin: 0;
-  height: 80px;
-  left: 50%;
-  top: 0;
-  transform: translate(-50%, -50%);
+
+input, label {
+    display: table-cell;
+    margin: 5px;
+    float: left;
 }
 
-.meni ul {
-  margin: 0;
-  padding: 1%;
-  padding-left: 20px;
+.sadrzaj div{
+    display: table-row;
 }
 
-.meni li {
-  display: inline;
-  margin-right: 20px;
+label{
+    width: 150px;
+    text-align: left;
 }
 
-.meni a {
-  color: black;
-  font-size: 14px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+input[type=submit]{
+    margin: 20px;
 }
 
-.meni li:nth-of-type(3) a {
-  text-decoration: none;
-}
+@media screen and (max-width: 600px) {
+    label, input{
+        width: 100%;
+    }
 
-.sadrzaj {
-  background-color: #7aa5d2;
-  margin-top: 10px;
-  border: 1px solid #47555e;
-}
-
-.sadrzaj form {
-  width: 330px;
-  text-align: center;
-  margin-top: 10%;
-  margin-bottom: 11.8%;
-  margin-left: auto;
-  margin-right: auto;
-  border: 1px solid #47555e;
-  background-color: #b0c4dd;
-  padding: 15px;
-}
-
-label {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 14px;
-  display: block;
-  float: left;
-  width: 140px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  text-align: left;
-}
-
-input {
-  width: 180px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-input:nth-of-type(5) {
-  width: 80px;
-}
-
-label[for="unos"] {
-  margin-top: 25px;
-}
-
-input[type="submit"] {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background-color: #b0c4dd;
-  border: 2px solid #496c96;
-  color: black;
-  height: 30px;
-  width: 100px;
-  margin-top: 20px;
-}
-
-input[type="submit"]:hover {
-  background-color: #47555e;
-  color: white;
-  border: 2px solid white;
-}
-
-@media only screen and (max-width: 600px) {
-  .meni li {
-    display: block;
-    margin-right: 20px;
-    margin-bottom: 7px;
-  }
-  .sadrzaj form {
-    width: 200px;
-  }
-
-  label {
-    margin-left: 10px;
-  }
-
-  input {
-    margin-bottom: 15px;
-  }
+    /*za dugme Submit*/
+    div+input{
+        width: 20%;
+    }
+    
 }
