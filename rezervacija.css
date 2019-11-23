@@ -10,7 +10,7 @@
 }
 
 
-.kalendar{
+#kalendar{
     border: 3px solid rgb(51, 51, 158);
     padding: 10px 0;
     margin: 10px auto;
@@ -30,10 +30,10 @@
 }
 
 .sviDani{
-    grid-template-rows: repeat(5,50px);
+    grid-template-rows: repeat(6,50px);
 }
 
-#mjesec{
+.labelaMjesec{
     text-decoration-color: rgb(51, 51, 158);
     font-weight: bold;
     padding-left: 15px;
@@ -52,10 +52,6 @@
     box-sizing: border-box;
 }
 
-
-.sviDani div:first-of-type{
-    grid-column-start: 5;
-}
 
 .broj{
     box-sizing: border-box;
