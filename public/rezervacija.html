@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rezervacija</title>
+        <link rel="stylesheet" href="rezervacija.css" />
+        <link rel="stylesheet" href="izgled.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+
+   </head> 
+   <body>
+        <div class="logo">
+            <img src="logo.png" alt="Logo">
+        </div>
+        <div class="meni">
+            <ul>
+                <li><a href="pocetna.html"  >Početna</a></li>
+                <li><a href="sale.html" >Sale</a></li>
+                <li><a href="unos.html">Unos</a></li>
+                <li><a href="rezervacija.html" id="trenutna">Rezervacije</a></li>
+                <li>Osobe</li>
+            </ul>
+        </div>
+        <div class="sadrzaj">
+            <div class="unutra">
+                <div class="forma">
+                        <div>
+                                <label>Sala</label>
+                                <select>
+                                        <option value="0-01">0-01</option>
+                                        <option value="0-02">0-02</option>
+                                        <option value="0-03">0-03</option>
+                                        <option value="0-04">0-04</option>
+                                        <option value="0-05">0-05</option>
+                                        <option value="0-06">0-06</option>
+                                        <option value="0-07">0-07</option>
+                                        <option value="0-08">0-08</option>
+                                        <option value="0-09">0-09</option>
+                                        <option value="1-01">1-01</option>
+                                        <option value="1-02">1-02</option>
+                                        <option value="1-03">1-03</option>
+                                        <option value="1-04">1-04</option>
+                                        <option value="1-05">1-05</option>
+                                        <option value="1-06">1-06</option>
+                                        <option value="1-07">1-07</option>
+                                        <option value="1-08">1-08</option>
+                                        <option value="1-09">1-09</option>
+                                        <option value="VA1">VA1</option>
+                                        <option value="VA2">VA2</option>
+                                        <option value="MA">MA</option>
+                                        <option value="EE1">EE1</option>
+                                        <option value="EE2">EE2</option>
+                                </select>
+                        </div>
+                        <div>
+                                <label>Periodična rezervacija</label>
+                                <input id="check" type="checkbox">
+                        </div>
+                        <div>
+                                <label>Početak</label>
+                                <input type="time" id="p">
+                        </div>
+                        <div>
+                                <label>Kraj</label>
+                                <input type="time" id="k">
+                        </div>
+                </div>
+                <div id="kalendar">
+                        <div class="daniUSedmici">
+                                <label>PON</label>
+                                <label>UTO</label>
+                                <label>SRI</label>
+                                <label>ČET</label>
+                                <label>PET</label>
+                                <label>SUB</label>
+                                <label>NED</label>
+                        </div>
+                </div>
+                <button id="prethodni" type="button">Prethodni</button>
+                <button id="sljedeci" type="button">Sljedeći</button>
+                </div>
+        </div>
+        <script src = "kalendar.js"></script>
+        <script src = "pozivi.js"></script>
+        <script src = "rezervacija.js"></script>
+   </body>
+</html>
