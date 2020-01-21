@@ -59,8 +59,8 @@ function dodajListenereNaTajMjesec(){
             let pocetak = document.getElementById("p").value;
             let kraj = document.getElementById("k").value;
             //moraju bit unesena vremena
-            if (pocetak.trim() && kraj.trim()){
-                slobodna = dani[i].getElementsByClassName("slobodna");
+            if (pocetak.trim() && kraj.trim() && document.getElementById("osoblje").value.trim() && document.getElementById("sala").value.trim()){
+                let slobodna = dani[i].getElementsByClassName("slobodna");
                 //ako je zeleno polje
                 let periodicnost = document.getElementById("check").checked;
                 if((periodicnost && (trenutniMjesec > 8 || trenutniMjesec < 6)) || !periodicnost){
@@ -70,11 +70,19 @@ function dodajListenereNaTajMjesec(){
                             
                             //dan, mjesec, sala, pocetak, kraj
                             if(periodicnost){
-                                Pozivi.rezervisiPeriodicniTermin(i,trenutniMjesec,document.querySelector("select").value, document.getElementById("p").value, document.getElementById("k").value);
+                                Pozivi.rezervisiPeriodicniTermin(i,trenutniMjesec,document.getElementById("sala").value, document.getElementById("p").value, document.getElementById("k").value,document.getElementById("osoblje").value);
                             }
                             else {
-                                Pozivi.rezervisiVanredniTermin(i,trenutniMjesec,document.querySelector("select").value, document.getElementById("p").value, document.getElementById("k").value);
+                                Pozivi.rezervisiVanredniTermin(i,trenutniMjesec,document.getElementById("sala").value, document.getElementById("p").value, document.getElementById("k").value,document.getElementById("osoblje").value);
                             }
+                        }
+                    }
+                    else{//isto to samo te ne pita da rezervises
+                        if(periodicnost){
+                            Pozivi.rezervisiPeriodicniTermin(i,trenutniMjesec,document.getElementById("sala").value, document.getElementById("p").value, document.getElementById("k").value,document.getElementById("osoblje").value);
+                        }
+                        else {
+                            Pozivi.rezervisiVanredniTermin(i,trenutniMjesec,document.getElementById("sala").value, document.getElementById("p").value, document.getElementById("k").value,document.getElementById("osoblje").value);
                         }
                     }
                 }
@@ -83,9 +91,12 @@ function dodajListenereNaTajMjesec(){
     }
 }
 
+
  window.onload = function(e){ 
     Pozivi.ucitajZauzeca();
     Kalendar.iscrtajKalendar(document.getElementById("kalendar"), trenutniMjesec);
     dodajListenereNaTajMjesec();
+    Pozivi.ucitajOsoblje();
+    Pozivi.ucitajSale(); 
 }
 

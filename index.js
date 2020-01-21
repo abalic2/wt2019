@@ -1,8 +1,3 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const app = express();
-const fs = require('fs');
-
 function nemaPresjekaVremena(pocetak, kraj, zauzeto_pocetak, zauzeto_kraj, prva){
     let sat_pocetak = parseInt(pocetak.slice(0,2));
     let sat_kraj = parseInt(kraj.slice(0,2));
@@ -52,12 +47,187 @@ function jeLiDatumIstiSemestarIDan(datum,dan,semestar){
     return false;
 }
 
+
+
+const express = require('express');
+const bodyParser = require('body-parser');
+const app = express();
 app.use(bodyParser.json() );
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
+const fs = require('fs');
+
+const db = require('./db.js')
+
+db.sequelize.sync({force:true}).then(function(){
+    inicializacija().then(function(){
+        app.emit("sveSpremno");
+        console.log("Gotovo kreiranje tabela i ubacivanje pocetnih podataka!");
+    });
+});
+
+function inicializacija(){
+    var osobljeListaPromisea=[];
+    var salaListaPromisea=[];
+    var terminListaPromisea = [];
+    var rezervacijaListaPromisea = [];
+    return new Promise(function(resolve,reject){
+        osobljeListaPromisea.push(db.osoblje.create({ime:'Neko', prezime:'Nekic', uloga:'profesor'}));
+        osobljeListaPromisea.push(db.osoblje.create({ime:'Drugi', prezime:'Neko', uloga:'asistent'}));
+        osobljeListaPromisea.push(db.osoblje.create({ime:'Test', prezime:'Test', uloga:'asistent'}));
+        Promise.all(osobljeListaPromisea).then(function(osoblje){
+            var osoba1=osoblje.filter(function(a){return a.ime==='Neko'})[0];
+            var osoba2=osoblje.filter(function(a){return a.ime==='Drugi'})[0];
+            var osoba3=osoblje.filter(function(a){return a.ime==='Test'})[0];
+            salaListaPromisea.push(db.sala.create({naziv:'1-11',zaduzenaOsoba:osoba1.id}));
+            salaListaPromisea.push(db.sala.create({naziv:'1-15',zaduzenaOsoba:osoba2.id}));
+            Promise.all(salaListaPromisea).then(function(sale){
+                var sala1=sale.filter(function(a){return a.naziv==='1-11'})[0];
+                var sala2=osoblje.filter(function(a){return a.naziv==='1-15'})[0];
+                terminListaPromisea.push(db.termin.create({redovni:false,dan:null,datum:'01.01.2020', semestar:null,pocetak:'12:00',kraj:'13:00'}));
+                terminListaPromisea.push(db.termin.create({redovni:true,dan:0,datum:null, semestar:'zimski',pocetak:'13:00',kraj:'14:00'}));
+                Promise.all(terminListaPromisea).then(function(termini){
+                    var termin1=termini.filter(function(a){return a.redovni===false})[0];
+                    var termin2=termini.filter(function(a){return a.redovni===true})[0];
+                    rezervacijaListaPromisea.push(db.rezervacija.create({termin:termin1.id,sala:sala1.id,osoba:osoba1.id}));
+                    rezervacijaListaPromisea.push(db.rezervacija.create({termin:termin2.id,sala:sala1.id,osoba:osoba3.id}));
+                    Promise.all(rezervacijaListaPromisea).then(function(b){
+                        resolve(true);
+                    }).catch(function(err){console.log("Rezervacija greska "+err);});
+                }).catch(function(err){console.log("Termin greska "+err);});
+            }).catch(function(err){console.log("Sala greska "+err);});   
+        }).catch(function(err){console.log("Osoblje greska "+err);});   
+    });
+}
+
+
+function uzimanjeZauzeca(){
+    let sve = "";
+    return new Promise(function(resolve,reject){
+            db.termin.findAll().then(function(termini){
+                let periodicna  = "";
+                let vanredna = "";
+                let prvaP = true;
+                let prvaV = true;
+                if(termini.length == 0){
+                    let sve = '{"periodicna": [' + periodicna + '],"vanredna": ['+ vanredna + ']}';
+                    resolve(sve);
+                }
+                for(let i = 0; i< termini.length; i++){
+                    let termin = termini[i];
+                    db.rezervacija.findOne({where:{termin:termin.id}}).then(function(rezervacija){
+                        db.sala.findOne({where:{id:rezervacija.sala}}).then(function(sala){
+                            db.osoblje.findOne({where:{id:rezervacija.osoba}}).then(function(osoba){
+                                if(termin.redovni == true){ //periodicna je
+                                    if(!prvaP) periodicna = periodicna + ',';
+                                    prvaP = false;
+                                    periodicna = periodicna + '{"dan":"' + termin.dan + '","semestar":"' + termin.semestar + '","pocetak":"'+termin.pocetak.slice(0,5) + '","kraj":"' + termin.kraj.slice(0,5) + '","naziv":"' + sala.naziv + '","predavac":"' + osoba.ime + ' ' + osoba.prezime + '"}';
+                                }
+                                else{
+                                    if(!prvaV) vanredna = vanredna + ',';
+                                    prvaV = false;
+                                    vanredna = vanredna + '{"datum":"' + termin.datum +  '","pocetak":"'+termin.pocetak.slice(0,5) + '","kraj":"' + termin.kraj.slice(0,5) + '","naziv":"' + sala.naziv + '","predavac":"' + osoba.ime + ' ' + osoba.prezime + '"}';
+                                }
+                                if(i == termini.length -1 ){
+                                    let sve = '{"periodicna": [' + periodicna + '],"vanredna": ['+ vanredna + ']}';
+                                    resolve(sve);
+                                }
+                            })
+                        })
+                    })
+                }
+                
+            });
+    });
+}
+
+function slanjePoruke(indeksZauzetog, smetaPeriodicna, periodicna, vanredna, tnaziv, tdatum,tpocetak,tkraj){
+    return new Promise(function(resolve,reject){
+            if(smetaPeriodicna){
+                db.sala.findOne({where:{naziv:tnaziv}}).then(function(sala){
+                    db.rezervacija.findAll({where:{sala:sala.id}}).then(function(rezervacije){
+                        for(let i = 0; i< rezervacije.length; i++){
+                            db.termin.findAll({where:{id:rezervacije[i].termin,dan:parseInt(periodicna[indeksZauzetog].dan), semestar:periodicna[indeksZauzetog].semestar, pocetak:periodicna[indeksZauzetog].pocetak,kraj:periodicna[indeksZauzetog].kraj}}).then(function(termin){
+                                if(termin.length === 1){
+                                    db.osoblje.findOne({where:{id:rezervacije[i].osoba}}).then(function(osoba){
+                                        resolve("Nije moguće rezervisati salu " + tnaziv +" za navedeni datum " + tdatum+ " i termin od " + tpocetak+" do " + tkraj+"! Salu je zauzela osoba " + osoba.ime + ' ' + osoba.prezime + ' koja je ' + osoba.uloga);
+                                    })
+                                }
+                            })
+                        }
+                    })
+                })
+            }
+            else{
+                db.sala.findOne({where:{naziv:tnaziv}}).then(function(sala){
+                    db.rezervacija.findAll({where:{sala:sala.id}}).then(function(rezervacije){
+                        for(let i = 0; i< rezervacije.length; i++){
+                            db.termin.findAll({where:{id:rezervacije[i].termin,datum:vanredna[indeksZauzetog].datum, pocetak:vanredna[indeksZauzetog].pocetak,kraj:vanredna[indeksZauzetog].kraj}}).then(function(termin){
+                                if(termin.length === 1){
+                                    db.osoblje.findOne({where:{id:rezervacije[i].osoba}}).then(function(osoba){
+                                        resolve("Nije moguće rezervisati salu " + tnaziv +" za navedeni datum " + tdatum+ " i termin od " + tpocetak+" do " + tkraj+"! Salu je zauzela osoba " + osoba.ime + ' ' + osoba.prezime + ' koja je ' + osoba.uloga);
+                                    })
+                                }                                
+                            })
+                        }
+                    })
+                })
+            }
+    });
+}
+
+function dodavanjeRezervacije(tdatum,tpocetak,tkraj,tnaziv,tpredavac,tredovni,tdan,tsemestar){
+    return new Promise(function(resolve,reject){
+        db.termin.create(
+            {
+                redovni : tredovni,
+                dan: tdan,
+                datum : tdatum,
+                semestar: tsemestar,
+                pocetak : tpocetak,
+                kraj: tkraj
+            }
+        ).then(function(termin){
+            db.sala.findOne({where:{naziv:tnaziv}}).then(function(sala){
+                db.osoblje.findOne({where:{ime:tpredavac.split(' ')[0], prezime:tpredavac.split(' ')[1]}}).then(function(osoba){
+                    db.rezervacija.create(
+                        {
+                            termin : termin.id,
+                            sala: sala.id,
+                            osoba: osoba.id
+                        }
+                    ).then(function(rezervacija){
+                        resolve();
+                    })
+                })
+            })
+                
+        });
+    });
+}
+
+
+var neuspjeh = function (poruka) {
+    console.log("Došlo je do greške: " + poruka);
+}
 
 app.get('/zauzeca',function(req,res){
-        res.sendFile(__dirname+"/zauzeca.json");
+    uzimanjeZauzeca().then(function (x) {
+        res.send(x);
+     }, neuspjeh);
+});
+
+
+app.get('/osoblje',function(req,res){
+    db.osoblje.findAll().then(function(result){
+        res.send(result);
+    });
+});
+
+app.get('/sale',function(req,res){
+    db.sala.findAll().then(function(result){
+        res.send(result);
+    });
 });
 
 app.get('/',function(req,res){
@@ -66,31 +236,32 @@ app.get('/',function(req,res){
 
 app.post('/dodajvanrednozauzece',function(req,res){
     let tijelo = req.body;
-    fs.readFile(__dirname+"/zauzeca.json" ,'utf8', function(err, contents) {
-        if(err) throw err;
-        zauzeca = JSON.parse(contents);
-        periodicna = zauzeca.periodicna;
-        vanredna = zauzeca.vanredna;
+    
+    let indeksZauzetog = 0;
+    let smetaPeriodicna = false;
+    uzimanjeZauzeca().then(function (sve) {
+        let zauzeca = JSON.parse(sve);
+        let periodicna = zauzeca.periodicna;
+        let vanredna = zauzeca.vanredna;
         let dodavanje = true;
-
         //provjera je li pocetak manji od kraja
         if(!nemaPresjekaVremena(tijelo['pocetak'], tijelo['kraj'], tijelo['pocetak'], tijelo['kraj'], true))
             dodavanje = false;
-       
+    
         if(dodavanje){ 
-            //provjera varednih 
+            //provjera vanrednih 
             for (let i = 0; i < vanredna.length; i++){
                 let zauzeto = vanredna[i];
-                if(zauzeto.naziv === tijelo['naziv']  && zauzeto.datum == tijelo['datum']){
+                if(zauzeto.naziv === tijelo['naziv'] && zauzeto.datum == tijelo['datum']){
                     if(!nemaPresjekaVremena(tijelo['pocetak'], tijelo['kraj'], zauzeto.pocetak, zauzeto.kraj,false)){
                         dodavanje = false;
+                        smetaPeriodicna = false;
+                        indeksZauzetog = i;
                         break;
                     }
-                    
                 }
             }
         }
-        
         //provjera periodicnih
         if(dodavanje){
             for (let i = 0; i < periodicna.length; i++){
@@ -98,52 +269,58 @@ app.post('/dodajvanrednozauzece',function(req,res){
                 if(zauzeto.naziv === tijelo['naziv']  && jeLiDatumIstiSemestarIDan(tijelo['datum'], zauzeto.dan, zauzeto.semestar)){
                     if(!nemaPresjekaVremena(tijelo['pocetak'], tijelo['kraj'], zauzeto.pocetak, zauzeto.kraj, false)){
                         dodavanje = false;
+                        smetaPeriodicna = true;
+                        indeksZauzetog = i;
                         break;
                     }
                 }
             }
         }
-        
-        
         if(dodavanje){
-            vanredna[vanredna.length] = tijelo;
-            let n = '{"periodicna":' + JSON.stringify(periodicna) + ', "vanredna":' + JSON.stringify(vanredna) + '}';
-            let novo = JSON.parse(n);
-            fs.writeFile(__dirname+"/zauzeca.json", JSON.stringify(novo,null,4), (err) => {
-                if (err) throw err;
-                res.send(novo);
-            });
+            dodavanjeRezervacije(tijelo['datum'],tijelo['pocetak'],tijelo['kraj'],tijelo['naziv'],tijelo['predavac'],false,null,null).then(function () {
+                uzimanjeZauzeca().then(function (sve) {
+                    res.send(sve);
+                },neuspjeh);
+
+            },neuspjeh);
         }
         else{
             res.status(300);
-            res.json({poruka:"Nije moguće rezervisati salu " + tijelo['naziv'] +" za navedeni datum " + tijelo['datum'] + " i termin od " + tijelo['pocetak'] +" do " + tijelo['kraj']+"!", svaZauzeca:zauzeca});
-        }
-    });
-});
+            slanjePoruke(indeksZauzetog, smetaPeriodicna, periodicna, vanredna, tijelo['naziv'], tijelo['datum'],tijelo['pocetak'],tijelo['kraj']).then(function (tekst) {
+                res.json({poruka:tekst,svaZauzeca:zauzeca});
 
+            },neuspjeh);
+        }
+    
+    
+    
+    }, neuspjeh);
+});
 
 app.post('/dodajperiodicnozauzece',function(req,res){
     let cijelo = req.body;
-    fs.readFile(__dirname+"/zauzeca.json" ,'utf8', function(err, contents) {
-        if(err) throw err;
-        zauzeca = JSON.parse(contents);
-        periodicna = zauzeca.periodicna;
-        vanredna = zauzeca.vanredna;
+    let indeksZauzetog = 0;
+    let smetaPeriodicna = false;
+    uzimanjeZauzeca().then(function (sve) {
+        let zauzeca = JSON.parse(sve);
+        let periodicna = zauzeca.periodicna;
+        let vanredna = zauzeca.vanredna;
         let dodavanje = true;
-
         let tijelo = cijelo['zauzece'];
         let datumZaPoruku = cijelo['informacije'];
-     
+    
         //provjera je li pocetak manji od kraja
         if(!nemaPresjekaVremena(tijelo['pocetak'], tijelo['kraj'], tijelo['pocetak'], tijelo['kraj'], true))
             dodavanje = false;
         
         if(dodavanje){
-        for (let i = 0; i < periodicna.length; i++){
+            for (let i = 0; i < periodicna.length; i++){
                 let zauzeto = periodicna[i];
                 if(tijelo['dan'] === zauzeto.dan && tijelo['semestar'] == zauzeto.semestar && tijelo['naziv'] ==zauzeto.naziv){
                     if(!nemaPresjekaVremena(tijelo['pocetak'], tijelo['kraj'], zauzeto.pocetak, zauzeto.kraj,false)){
                         dodavanje = false;
+                        indeksZauzetog = i;
+                        smetaPeriodicna = true;
                         break;
                     }
                 }
@@ -155,27 +332,27 @@ app.post('/dodajperiodicnozauzece',function(req,res){
                 if(zauzeto.naziv === tijelo['naziv']  && jeLiDatumIstiSemestarIDan(zauzeto.datum, tijelo['dan'], tijelo['semestar'])){
                     if(!nemaPresjekaVremena(tijelo['pocetak'], tijelo['kraj'], zauzeto.pocetak, zauzeto.kraj,false)){
                         dodavanje = false;
+                        indeksZauzetog = i;
+                        smetaPeriodicna = false;
                         break;
                     }
                 }
             }
         }
-              
-    
         if(dodavanje) {
-            periodicna[periodicna.length] = tijelo;
-            let n = '{"periodicna":' + JSON.stringify(periodicna) + ', "vanredna":' + JSON.stringify(vanredna) + '}';
-            let novo = JSON.parse(n);
-            fs.writeFile(__dirname+"/zauzeca.json", JSON.stringify(novo,null,4), (err) => {
-                if (err) throw err;
-                res.send(novo);
-            });
+            dodavanjeRezervacije(null,tijelo['pocetak'],tijelo['kraj'],tijelo['naziv'],tijelo['predavac'],true,parseInt(tijelo['dan']),tijelo['semestar'],).then(function () {
+                uzimanjeZauzeca().then(function (sve) {
+                    res.send(sve);
+                },neuspjeh);
+
+            },neuspjeh);
         }
         else{
             res.status(300);
-            res.json({poruka:"Nije moguće rezervisati salu " + tijelo['naziv'] +" za navedeni datum " + datumZaPoruku['datum'] + " i termin od " + tijelo['pocetak'] +" do " + tijelo['kraj']+"!",svaZauzeca:zauzeca});
+            slanjePoruke(indeksZauzetog, smetaPeriodicna, periodicna, vanredna, tijelo['naziv'], datumZaPoruku['datum'],tijelo['pocetak'],tijelo['kraj']).then(function (tekst) {
+                res.json({poruka:tekst,svaZauzeca:zauzeca});
+            },neuspjeh);
         }
-
     });
 });
 
@@ -247,7 +424,9 @@ app.post('/ucitavanjeslika',function(req,res){
             }
         }
     });
-    
-    
 });
+
+
 app.listen(8080);
+
+module.exports = app;
