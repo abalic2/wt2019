@@ -113,6 +113,7 @@ function uzimanjeZauzeca(){
                     let sve = '{"periodicna": [' + periodicna + '],"vanredna": ['+ vanredna + ']}';
                     resolve(sve);
                 }
+                let brojac=0;
                 for(let i = 0; i< termini.length; i++){
                     let termin = termini[i];
                     db.rezervacija.findOne({where:{termin:termin.id}}).then(function(rezervacija){
@@ -128,7 +129,8 @@ function uzimanjeZauzeca(){
                                     prvaV = false;
                                     vanredna = vanredna + '{"datum":"' + termin.datum +  '","pocetak":"'+termin.pocetak.slice(0,5) + '","kraj":"' + termin.kraj.slice(0,5) + '","naziv":"' + sala.naziv + '","predavac":"' + osoba.ime + ' ' + osoba.prezime + '"}';
                                 }
-                                if(i == termini.length -1 ){
+                                brojac++;
+                                if(brojac == termini.length  ){
                                     let sve = '{"periodicna": [' + periodicna + '],"vanredna": ['+ vanredna + ']}';
                                     resolve(sve);
                                 }
@@ -350,6 +352,7 @@ app.post('/dodajperiodicnozauzece',function(req,res){
         else{
             res.status(300);
             slanjePoruke(indeksZauzetog, smetaPeriodicna, periodicna, vanredna, tijelo['naziv'], datumZaPoruku['datum'],tijelo['pocetak'],tijelo['kraj']).then(function (tekst) {
+                
                 res.json({poruka:tekst,svaZauzeca:zauzeca});
             },neuspjeh);
         }

@@ -60,11 +60,11 @@ function dodajListenereNaTajMjesec(){
             let kraj = document.getElementById("k").value;
             //moraju bit unesena vremena
             if (pocetak.trim() && kraj.trim() && document.getElementById("osoblje").value.trim() && document.getElementById("sala").value.trim()){
-                let slobodna = dani[i].getElementsByClassName("slobodna");
+                //let slobodna = dani[i].getElementsByClassName("slobodna");
                 //ako je zeleno polje
                 let periodicnost = document.getElementById("check").checked;
                 if((periodicnost && (trenutniMjesec > 8 || trenutniMjesec < 6)) || !periodicnost){
-                    if(slobodna.length !== 0){ 
+                    //if(slobodna.length !== 0){ 
                         var r=confirm("Želite li rezervisati ovaj termin?");
                         if (r==true) {
                             
@@ -77,15 +77,15 @@ function dodajListenereNaTajMjesec(){
                             }
                         }
                     }
-                    else{//isto to samo te ne pita da rezervises
+                    /*else{//isto to samo te ne pita da rezervises
                         if(periodicnost){
                             Pozivi.rezervisiPeriodicniTermin(i,trenutniMjesec,document.getElementById("sala").value, document.getElementById("p").value, document.getElementById("k").value,document.getElementById("osoblje").value);
                         }
                         else {
                             Pozivi.rezervisiVanredniTermin(i,trenutniMjesec,document.getElementById("sala").value, document.getElementById("p").value, document.getElementById("k").value,document.getElementById("osoblje").value);
                         }
-                    }
-                }
+                    }*/
+                //}
             }
         }, false);
     }
